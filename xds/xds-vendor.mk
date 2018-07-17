@@ -19,7 +19,6 @@ PRODUCT_COPY_FILES += \
     vendor/gpd/xds/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     vendor/gpd/xds/proprietary/etc/firmware/md32_d.bin:system/etc/firmware/md32_d.bin \
     vendor/gpd/xds/proprietary/etc/firmware/md32_p.bin:system/etc/firmware/md32_p.bin \
-    vendor/gpd/xds/proprietary/vendor/etc/audio_param:system/vendor/etc/audio_param \
     vendor/gpd/xds/proprietary/vendor/etc/audio_param/AudioParamOptions.xml:system/vendor/etc/audio_param/AudioParamOptions.xml \
     vendor/gpd/xds/proprietary/vendor/etc/mtk_omx_core.cfg:system/vendor/etc/mtk_omx_core.cfg \
     vendor/gpd/xds/proprietary/vendor/etc/vold.fstab:system/vendor/etc/vold.fstab \
