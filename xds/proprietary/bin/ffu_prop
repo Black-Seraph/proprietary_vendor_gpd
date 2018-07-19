@@ -1,0 +1,35 @@
+#!/system/bin/sh
+# coded by sunghyun1.cho@samsung.com
+
+EXT_CSD_FILE=/sys/kernel/debug/mmc0/mmc0:0001/ext_csd
+OLD_VERSION=00
+OLD_VERSION_02=01
+NEW_VERSION=02
+
+get_extcsd()
+{
+  ext_csd=`cat $EXT_CSD_FILE`
+}
+
+check_version()
+{
+  if [ "$1" = "$OLD_VERSION" ]; then
+    setprop emmc.firmware.version 00
+  elif [ "$1" = "$OLD_VERSION_02" ]; then
+    setprop emmc.firmware.version 01
+  elif [ "$1" = "$NEW_VERSION" ]; then
+    setprop emmc.firmware.version 02
+  fi
+}
+
+# exit condition
+if [ ! -e $EXT_CSD_FILE ]; then
+  exit 1
+fi
+
+get_extcsd
+fw_version=${ext_csd:$((511*2-257*2)):2}
+
+# check before FFU
+check_version $fw_version
+
